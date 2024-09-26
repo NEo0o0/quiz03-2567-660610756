@@ -38,9 +38,8 @@ export const GET = async (request: NextRequest) => {
 export const POST = async (request: NextRequest) => {
   readDB();
   const body = await request.json();
-  const { db } = body;
-  const roomId = db.roomId;
-  const messageText = db.messageText;
+  const {roomId} = body.roomId;
+  const {messageText} = body.messageText;
 
   const foundRoom =  (<Database>DB).rooms.find(roomId);
   if(!foundRoom) {
