@@ -6,7 +6,7 @@ import { Database,Payload } from "@lib/type";
 
 export const GET = async () => {
   readDB();
-  let dbs=(<Database>DB).rooms;
+  const dbs=(<Database>DB).rooms;
   
 
   return NextResponse.json({
